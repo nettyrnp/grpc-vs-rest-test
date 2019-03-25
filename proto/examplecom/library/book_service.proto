@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package examplecom.library;
+
+message Book {
+  int64 isbn = 1;
+  string title = 2;
+  string author = 3;
+}
+
+message GetTestArrayRequest {
+  int64 size = 1;
+}
+
+service BookService {
+  rpc GetTestArray(GetTestArrayRequest) returns (stream Book) {}
+}
